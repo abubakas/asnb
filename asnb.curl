@@ -1,0 +1,3 @@
+curl -o asnb.html http://www.asnb.com.my/price.aspx
+
+cat asnb.html | html2text | grep '|' | grep AS  | sed 's/ //g' | sed 's/|A/A/g' | cut -d"|" -f1,2 > asnb.txt
